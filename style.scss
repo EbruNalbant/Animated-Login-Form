@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #a2a8d3 0%, #ff6f3c 100%);
+}
+
+.container {
+    background: #fff;
+    max-width: 350px;
+    width: 100%;
+    padding: 25px 30px;
+    border-radius: 5px;
+    position: relative;
+
+    /* logo part */
+    .logo img {
+        position: absolute;
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        border: 4px solid #a2a8d3;
+        top: 5px;
+        left: 70%;
+    }
+
+    /* Form part */
+    form {
+        .title {
+            font-size: 30px;
+            font-weight: 600;
+            margin: 20px 0 10px 0;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                height: 4px;
+                width: 33px;
+                bottom: 2px;
+                left: 0;
+                border-radius: 5px;
+                background: #a2a8d3;
+            }
+        }
+
+        .input-box {
+            width: 100%;
+            height: 45px;
+            margin-top: 25px;
+            position: relative;
+
+            input {
+                height: 100%;
+                width: 100%;
+                font-size: 16px;
+                outline: none;
+                border: none;
+
+                /* animation for input  start */
+                &:focus~.underline::after,
+                &:valid~.underline::after {
+                    transform: scaleX(1);
+                    transform-origin: left;
+                }
+            }
+
+            .underline::before {
+                content: "";
+                position: absolute;
+                height: 2px;
+                width: 100%;
+                left: 0;
+                bottom: 0;
+                background: #ccc;
+            }
+
+            .underline::after {
+                content: "";
+                position: absolute;
+                height: 2px;
+                width: 100%;
+                left: 0;
+                bottom: 0;
+                background: #ff6f3c;
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: all .3s ease;
+            }
+
+            /* animation for input  end */
+
+            #button {
+                margin: 20px 0 20px 0;
+                font-size: 16px;
+                color: #fff;
+                border-radius: 5px;
+                background: #ff6f3c;
+                cursor: pointer;
+                transition: all .3s ease;
+
+                &:hover {
+                    letter-spacing: 1px;
+                    background: rgb(0, 0, 0, 0.15);
+                    color: #ff6f3c;
+                    font-weight: bold;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+
+    .text {
+        font-size: 14px;
+        text-align: center;
+        margin: 40px 0 20px 0;
+    }
+
+    /* Social media buttons part */
+    .github a,
+    .twitter a,
+    .facebook a {
+        display: block;
+        width: 100%;
+        height: 45px;
+        font-size: 15px;
+        text-decoration: none;
+        padding-left: 20px;
+        color: #fff;
+        line-height: 45px;
+        border-radius: 5px;
+        margin-top: 10px;
+        transition: all .3s ease;
+
+        & i {
+            font-size: 22px;
+            padding-right: 22px;
+        }
+    }
+
+    .github a {
+        background-color: #24292e;
+
+        &:hover {
+            background-color: #6d7e8f;
+            border-radius: 10px;
+        }
+    }
+
+    .twitter a {
+        background-color: #1ad1f2;
+
+        &:hover {
+            background-color: #acdcee;
+            border-radius: 10px;
+        }
+    }
+
+    .facebook a {
+        background-color: #4267b2;
+
+        &:hover {
+            background-color: #8797b6;
+            border-radius: 10px;
+        }
+    }
+}
